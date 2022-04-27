@@ -11,11 +11,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.Route
 import kotlinx.coroutines.flow.collect
 
 @Composable
 fun RegistrationScreen(
-    viewModel: RegistrationViewModel = hiltViewModel()
+    viewModel: RegistrationViewModel = hiltViewModel(),
+    navigate: (route: String) -> Unit
 ) {
     val state = viewModel.state
     val context = LocalContext.current
@@ -23,7 +25,7 @@ fun RegistrationScreen(
         viewModel.validationEvents.collect { event ->
             when (event) {
                 ValidationEvent.Success -> {
-
+                    navigate(Route.Home.route)
                 }
             }
         }

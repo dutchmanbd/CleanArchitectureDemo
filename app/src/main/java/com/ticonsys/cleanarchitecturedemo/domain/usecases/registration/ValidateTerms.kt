@@ -1,4 +1,6 @@
-package com.ticonsys.cleanarchitecturedemo.domain.usecases
+package com.ticonsys.cleanarchitecturedemo.domain.usecases.registration
+
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.ValidationResult
 
 
 class ValidateTerms {

@@ -6,7 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.Route
+import com.ticonsys.cleanarchitecturedemo.presentation.features.home.HomeScreen
 import com.ticonsys.cleanarchitecturedemo.presentation.features.registration.RegistrationScreen
 import com.ticonsys.cleanarchitecturedemo.presentation.theme.CleanArchitectureDemoTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,9 +27,29 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    RegistrationScreen()
+                    MainScreen()
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun MainScreen() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = Route.Registration.route) {
+        composable(Route.Registration.route) {
+            RegistrationScreen { route ->
+                navController.navigate(route){
+                    popUpTo(id = navController.graph.startDestinationId){
+                        inclusive = true
+                    }
+                }
+            }
+        }
+
+        composable(Route.Home.route) {
+            HomeScreen()
         }
     }
 }

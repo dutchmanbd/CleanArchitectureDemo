@@ -5,10 +5,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ticonsys.cleanarchitecturedemo.domain.usecases.ValidateEmail
-import com.ticonsys.cleanarchitecturedemo.domain.usecases.ValidatePassword
-import com.ticonsys.cleanarchitecturedemo.domain.usecases.ValidateRepeatedPassword
-import com.ticonsys.cleanarchitecturedemo.domain.usecases.ValidateTerms
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.registration.ValidateEmail
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.registration.ValidatePassword
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.registration.ValidateRepeatedPassword
+import com.ticonsys.cleanarchitecturedemo.domain.usecases.registration.ValidateTerms
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
