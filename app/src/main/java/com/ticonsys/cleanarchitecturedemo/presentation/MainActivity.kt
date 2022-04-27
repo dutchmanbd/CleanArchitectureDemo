@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ticonsys.cleanarchitecturedemo.domain.usecases.Route
+import com.ticonsys.cleanarchitecturedemo.util.Route
 import com.ticonsys.cleanarchitecturedemo.presentation.features.home.HomeScreen
 import com.ticonsys.cleanarchitecturedemo.presentation.features.registration.RegistrationScreen
 import com.ticonsys.cleanarchitecturedemo.presentation.theme.CleanArchitectureDemoTheme

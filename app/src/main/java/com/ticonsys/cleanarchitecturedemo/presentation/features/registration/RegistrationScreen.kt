@@ -11,7 +11,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.ticonsys.cleanarchitecturedemo.domain.usecases.Route
+import com.ticonsys.cleanarchitecturedemo.util.Route
 import kotlinx.coroutines.flow.collect
 
 @Composable
